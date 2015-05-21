@@ -44,20 +44,20 @@ def compileRegex(replaceInlineMath, replaceClasses, noPunc, puncFile, extractCla
     if replaceInlineMath:
         replaceItem = []
         replaceItem.append(re.compile(
-            r'<span class=\'mathgroup\'>\$</span>(.*)<span class=\'mathgroup\'>\$</span>'))
+            r'<span class=\'mathgroup\'>\$</span>(.*?)<span class=\'mathgroup\'>\$</span>'))
         replaceItem.append(replaceInlineMath)
         replace.append(replaceItem)
 
     for item in replaceClasses:
         replaceItem = []
         replaceItem.append(re.compile(r'<span class=\''+item[0]+\
-                                   '\'>([^<]+)</span>'))
+                                   '\'>([^<]+?)</span>'))
         replaceItem.append(item[1])
         replace.append(replaceItem)
 
     extract = []
     for item in extractClasses:
-        extract.append(re.compile(r'<span class=\''+item+'\'>([^<]+)</span>'))
+        extract.append(re.compile(r'<span class=\''+item+'\'>([^<]+?)</span>'))
     if not noPunc:
         punc = []
         if not puncFile:
