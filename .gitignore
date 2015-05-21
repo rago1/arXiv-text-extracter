@@ -215,4 +215,5 @@ pip-log.txt
 #Mr Developer
 .mr.developer.cfg
 res/dummy.html
-res/dummy.html
+res/identifiers.p
+res/subIds.p
